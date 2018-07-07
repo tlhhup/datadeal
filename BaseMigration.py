@@ -1,11 +1,13 @@
 import pymysql.cursors
 import redis
+import time
 
 
 class BaseMigration(object):
     # 连接redis
     redis_config = {"host": "localhost", "port": 6379, "db": 10}
     redis_conn = redis.Redis(**redis_config)
+    query_limit = 10
 
     # 链接mysql
     connection = pymysql.connect(host='localhost',
@@ -19,14 +21,13 @@ class BaseMigration(object):
 
     # 从info_base中查询数据，
     def _get_data(self):
-        # start = time.process_time()
         # 获取cursor对象
         cursor = self.connection.cursor()
         # 初始值
         id = self.redis_conn.get(self.table_name)
         id = id if id else 0
         # 查询新库中的的数据
-        sql = "SELECT * FROM " + self.table_name + "  where id>%d limit 2" % int(id)
+        sql = "SELECT * FROM " + self.table_name + "  where id>%d limit %d" % (int(id), self.query_limit)
         cursor.execute(sql)
         return cursor.fetchall()
 
@@ -46,6 +47,7 @@ class BaseMigration(object):
             self.connection.close()
 
     def export_data(self):
+        start = time.clock()
         # 1.获取旧数据
         datas = self._get_data()
         if datas:
@@ -55,6 +57,7 @@ class BaseMigration(object):
             self._insert_data(sql, lastId)
         else:
             print('no data to deal')
+        print('耗时', time.clock() - start)
 
     def handle_data(self, datas=[]):
         """
