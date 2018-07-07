@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="39feada9-42a4-4787-9e94-2d36a4823203" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/mongo/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mongo/person.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="39feada9-42a4-4787-9e94-2d36a4823203" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -196,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1530962992180</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="1.mongo">
+      <created>1530964912654</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1530964912655</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -271,7 +274,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1.修改基类为模版类，子类只需要负责数据的处理即可" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.修改基类为模版类，子类只需要负责数据的处理即可" />
+    <MESSAGE value="1.mongo" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.mongo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
